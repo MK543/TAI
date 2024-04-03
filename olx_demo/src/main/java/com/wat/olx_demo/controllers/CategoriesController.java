@@ -1,11 +1,10 @@
 package com.wat.olx_demo.controllers;
 
-import com.wat.olx_demo.dtos.CategoriesDto;
+import com.wat.olx_demo.dtos.CategoryDto;
+import com.wat.olx_demo.dtos.CategoryRequestDto;
 import com.wat.olx_demo.services.CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +18,12 @@ public class CategoriesController {
         this.categoriesService = categoriesService;
     }
     @GetMapping("/all")
-    public List<CategoriesDto> getCategories(){
+    public List<CategoryDto> getCategories(){
         return categoriesService.getAllCategories();
+    }
+
+    @PostMapping("/add")
+    public void addCategories(@RequestBody CategoryRequestDto categoryRequestDto){
+        categoriesService.addCategory(categoryRequestDto);
     }
 }

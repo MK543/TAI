@@ -10,4 +10,6 @@ public class OfferRequestDto {
     private String description;
 
     private String photoLink;
+
+
 }

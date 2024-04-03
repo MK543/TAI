@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CategoriesDto {
+public class CategoryDto {
 
     private int id;
 
